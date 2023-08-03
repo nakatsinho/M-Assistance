@@ -312,3 +312,20 @@
       grid-template-columns: repeat(1, 1fr);
     }
   }
+
+  .api {
+    background: #0a1f44;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .api a {
+    text-decoration: underline;
+  }
+  
+  .api a:hover {
+    text-decoration: none;
+  }
