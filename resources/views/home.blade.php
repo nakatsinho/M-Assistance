@@ -5,8 +5,9 @@
     <div class="container">
         <div class="heading-wrapper">
             <h1 class="heading">Welcome to Mozambique Atlas</h1>
-            <form>
-                <input type="text" class="input-grey-rounded" placeholder="Search for the City" autofocus>
+            <form id="weather-form">
+                @csrf
+                <input type="text" name="city" class="input-rounded" placeholder="Search for the City" autofocus required>
                 <div style="padding: 2%;">
                     <button type="submit">Search Now</button>
                 </div>
