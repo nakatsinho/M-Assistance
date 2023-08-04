@@ -18,6 +18,9 @@
         </div>
     </div>
 </section>
+<div class="loader-container">
+    <div class="loader"></div>
+</div>
 <section class="ajax-section">
     <div class="container" style="text-align: center;">
         <ul class="cities"></ul>
