@@ -1,0 +1,5 @@
+<?php
+
+return [
+    "MZ" => "MZN",
+];
