@@ -101,34 +101,7 @@ class WeatherController extends Controller
      */
     public function show($weather)
     {
-        $city = 'Maputo';
-        $apiKey = '2f26f4026a31178c80d27a7b501e15a9';
-
-        $client = new Client();
-        $response = $client->get("https://api.openweathermap.org/data/2.5/weather?q={$city}&appid={$apiKey}");
-
-        $data = json_decode($response->getBody(), true);
-
-        $temperature = $data['main']['temp'];
-        $weather_description = $data['weather'][0]['description'] ?? null;
-        $humidity = $data['main']['humidity'];
-        $wind_speed = $data['wind']['speed'];
-        $wind_direction = $data['wind']['deg'];
-        $sunrise = date('H:i', $data['sys']['sunrise']);
-        $sunset = date('H:i', $data['sys']['sunset']);
-        $uv_index = $data['uv_index'] ?? null;
-
-        return [
-            $city,
-            $temperature,
-            $weather_description,
-            $humidity,
-            $wind_speed,
-            $wind_direction,
-            $sunrise,
-            $sunset,
-            $uv_index
-        ];
+        //
     }
 
     /**
