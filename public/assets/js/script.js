@@ -2,10 +2,13 @@ const form = document.querySelector("#weather-form");
 const input = document.querySelector("#weather-form input[name='city']");
 const errorContainer = document.querySelector("#error-container");
 const list = document.querySelector(".cities");
+const loaderContainer = document.querySelector(".loader-container");
 
 form.addEventListener("submit", e => {
     e.preventDefault();
     let inputVal = input.value;
+
+    showLoader();
 
     fetch("/weather", {
         method: "POST",
@@ -75,14 +78,25 @@ form.addEventListener("submit", e => {
             li.innerHTML = markup;
             list.appendChild(li);
 
+            hideLoader();
+
             const errorContainer = document.getElementById('error-container');
             errorContainer.style.display = 'none';
         })
         .catch(error => {
             errorContainer.textContent = error.message || 'Introduce a valid city name';
             errorContainer.style.display = 'block';
+            hideLoader();
         });
 
     form.reset();
     input.focus();
 });
+
+function showLoader() {
+    loaderContainer.style.display = "block";
+}
+
+function hideLoader() {
+    loaderContainer.style.display = "none";
+}
