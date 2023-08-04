@@ -27,6 +27,19 @@ form.addEventListener("submit", e => {
 
             console.log(data);
 
+            //TODO - Feat: If I want to show 1 record by query
+            // while (list.firstChild) {
+            //     list.removeChild(list.firstChild);
+            // }
+
+            //TODO - Feat: If I want to block cards to to next row
+            // const liItems = list.querySelectorAll("li.city");
+            // if (liItems.length > 4) {
+            //     for (let i = 4; i < liItems.length; i++) {
+            //         list.removeChild(liItems[i]);
+            //     }
+            // }
+
             const formattedPopulation = Number(population).toLocaleString();
             const formattedPercapita = Number(percapita).toLocaleString(undefined, {
                 style: 'currency',
