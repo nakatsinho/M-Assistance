@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\ExchangeRateController;
+use App\Http\Controllers\WeatherController;
+use App\Http\Controllers\WorldBankController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +17,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+Route::resource('weather', WeatherController::class);
+
+//The routes above was used to make test during the development process
+Route::resource('exchange-rates', ExchangeRateController::class);
+Route::resource('world-bank', WorldBankController::class);
+
+Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
