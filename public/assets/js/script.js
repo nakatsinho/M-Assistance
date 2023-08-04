@@ -27,6 +27,38 @@ form.addEventListener("submit", e => {
 
             console.log(data);
 
+            const formattedPopulation = Number(population).toLocaleString();
+            const formattedPercapita = Number(percapita).toLocaleString(undefined, {
+                style: 'currency',
+                currency: 'USD',
+            });
+            const formattedRateValue = Number(rate).toLocaleString(undefined, {
+                style: 'currency',
+                currency: rateName,
+            });
+
+            const li = document.createElement("li");
+            li.classList.add("city");
+            const markup = `
+                    <h2 class="city-name" data-name="${name},${country}">
+                        <span>${name}</span>
+                        <sup>${country}</sup>
+                    </h2>
+                    <div class="city-temp">${Math.round(temp)}<sup>°C</sup></div>
+                    <figure>
+                        <img class="city-icon" src="${icon}" alt="description">
+                        <figcaption>${description}</figcaption>
+                    </figure>
+                    <div><span>POPULATION: </span><span> ${formattedPopulation}</span></div>
+                    <div><span>PERCAPITA: </span><span> ${formattedPercapita}</span></div>
+                    <hr />
+                    <br>
+                    <div class="row"> 
+                        <div class="col-md-6"> <span>USD </span><span> 1$  </span></div>
+                        <div class="col-md-6"> <span> ${formattedRateValue}</span></div>
+                    </div>
+                `;
+
             li.innerHTML = markup;
             list.appendChild(li);
 
