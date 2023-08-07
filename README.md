@@ -92,6 +92,10 @@ php -S localhost:8030 -t public/
 
 Open you Browser, and type http://127.0.0.1:8030 !!! ENJOY...
 
+OR
+
+Click here to navigate: https://bit.ly/450DLPY
+
 ## Dependence & Authors
 
 **Powered by** <a href="https://github.com/nakatsinho">Kelton Mauro Cumbe 🇲🇿</a>, aka **The Problems Solver** ! WhatsApp me <a href="https://wa.me/+258842536927"> any time </a>.
